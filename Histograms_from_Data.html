@@ -140,7 +140,7 @@ $(document).ready(function () {
 N = dim(fulldata)[1]
 N</code></pre>
 <pre><code>## [1] 310273</code></pre>
-<p>Note that there are 310,273 observations (rows) in this dataset. We will create a new dataset ‘Unpunctual11’ that will give us all values of the variable ‘unpunctuality’ for appointments set at 11am. We will examine summary statistics of this univariate dataset. Note now that there are 15,428 observations in this set.</p>
+<p>Note that there are 310,273 observations (rows) in this dataset. We will create a new dataset ‘Unpunctual11’ that will give us all values of the variable ‘unpunctuality’ for appointments set at 11am. We will examine summary statistics of this univariate dataset. Note now that there are 16,553 observations in this set.</p>
 <pre class="r"><code>Unpunctual11 = fulldata[fulldata$Simple_time == 11, 2]
 N11 = dim(Unpunctual11)[1]
 N11</code></pre>
@@ -153,11 +153,11 @@ N11</code></pre>
 ##  Mean   : -45.62  
 ##  3rd Qu.:  -5.00  
 ##  Max.   : 575.00</code></pre>
-<p>Above we see the five number summary plus the mean for unpunctuality. So we know, on average, patients within the dataset scheduled for 9am appointments arrived 45.62 minutes early.</p>
+<p>Above we see the five number summary plus the mean for unpunctuality. So we know, on average, patients within the dataset scheduled for 11am appointments arrived 45.62 minutes early.</p>
 <p>We will treat unpunctuality as a continuous random variable for the purpose of this analysis.</p>
 <p>The main goal of this report is to demonstrate how we go from histograms to densities for continuous random variables. Remember, relative frequency histograms capture an area equal to 1, corresponding to 100%.</p>
-<p>We know that our set of 15,428 observations can be seen as a decently large sample representing a population: we might try to generalize this to all patients that make appointments at 9am at UNC clinics over the period the data was collected (assuming patients were selected via a valid sampling process). Instead, we will treat the 15,428 observations as our population and sample from this set with various size samples and examine the associated histograms.</p>
-<p>So, from now on, define the set of 15,428 observations as our population.</p>
+<p>We know that our set of 16,553 observations can be seen as a decently large sample representing a population: we might try to generalize this to all patients that make appointments at 11am at UNC clinics over the period the data was collected (assuming patients were selected via a valid sampling process). Instead, we will treat the 16,553 observations as our population and sample from this set with various size samples and examine the associated histograms.</p>
+<p>So, from now on, define the set of 16,553 observations as our population.</p>
 <p>Below we will generate the histogram of the unpunctuality variable for a simple random sample (SRS) of <span class="math inline">\(n=25\)</span>. When we create a histogram, we can choose the number of classes. As we will see, we can’t have too many classes when we only have 25 datapoints.</p>
 <pre class="r"><code>set.seed(1137)
 sample25 = Unpunctual11[sample(1:N11, 25, replace=FALSE),1]
