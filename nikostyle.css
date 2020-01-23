@@ -25,9 +25,9 @@ body {
 #header {
 	margin:0;
 	padding:0;
-	background: #626E60 url(Banner.jpg) no-repeat top left;
+	background: #626E60 url(BannerAlt.jpg) no-repeat top left;
 	width: 1207px;
-	height: 155px;
+	height: 200px;
 }
 
 nav ul {
